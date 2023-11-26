@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DeaController;
+use App\Http\Controllers\UsuariooperadorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Usando la nueva sintaxis para Laravel 8
 Route::get('dea', [DeaController::class, 'index']);
 Route::post('dea/create', [DeaController::class, 'store']);
+
+Route::get('/usuariooperador', [UsuariooperadorController::class, 'index']);
+Route::post('/usuariooperador/create', [UsuariooperadorController::class, 'store']);
+Route::get('/usuariooperador/{id}', [UsuariooperadorController::class, 'show']);
+Route::put('/usuariooperador/{id}', [UsuariooperadorController::class, 'update']);
+Route::delete('/usuariooperador/{id}', [UsuariooperadorController::class, 'destroy']);
