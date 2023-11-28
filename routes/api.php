@@ -21,11 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Usando la nueva sintaxis para Laravel 8
-Route::get('dea', [DeaController::class, 'index']);
-Route::post('dea/create', [DeaController::class, 'store']);
+Route::get('dea', [DeaController::class, 'index'])->middleware('validateJWT');
+Route::post('dea/create', [DeaController::class, 'store'])->middleware('validateJWT');
 
-Route::get('/usuariooperador', [UsuariooperadorController::class, 'index']);
-Route::post('/usuariooperador/create', [UsuariooperadorController::class, 'store']);
-Route::get('/usuariooperador/{id}', [UsuariooperadorController::class, 'show']);
-Route::put('/usuariooperador/{id}', [UsuariooperadorController::class, 'update']);
-Route::delete('/usuariooperador/{id}', [UsuariooperadorController::class, 'destroy']);
+Route::get('/usuariooperador', [UsuariooperadorController::class, 'index'])->middleware('validateJWT');
+Route::post('/usuariooperador/create', [UsuariooperadorController::class, 'store'])->middleware('validateJWT');
+Route::get('/usuariooperador/{id}', [UsuariooperadorController::class, 'show'])->middleware('validateJWT');
+Route::put('/usuariooperador/{id}', [UsuariooperadorController::class, 'update'])->middleware('validateJWT');
+Route::delete('/usuariooperador/{id}', [UsuariooperadorController::class, 'destroy'])->middleware('validateJWT');
