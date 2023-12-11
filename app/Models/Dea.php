@@ -32,7 +32,8 @@ class Dea extends Model
   'dea_fechacertificacion',
   'dea_firma',
   'dea_ciudadpersonal',
-  'dea_fechapersonal'
+  'dea_fechapersonal',
+  'dea_TipoDocumento'
     ];
     use HasFactory;
 }
