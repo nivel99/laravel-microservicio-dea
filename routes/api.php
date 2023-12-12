@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Usando la nueva sintaxis para Laravel 8
 Route::get('dea', [DeaController::class, 'index'])->middleware('validateJWT');
 Route::post('dea/create', [DeaController::class, 'store'])->middleware('validateJWT');
+Route::put('dea/{id}', [DeaController::class, 'update'])->middleware('validateJWT');
 
 Route::get('/usuariooperador', [UsuariooperadorController::class, 'index'])->middleware('validateJWT');
 Route::post('/usuariooperador/create', [UsuariooperadorController::class, 'store'])->middleware('validateJWT');
